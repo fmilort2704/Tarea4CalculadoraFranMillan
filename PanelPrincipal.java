@@ -57,5 +57,8 @@ public class PanelPrincipal extends JPanel implements ActionListener {
             //Con append añado al text area no lo resteo 
             areaTexto.append(((JButton) o).getText());  
         }
+        if (o == botonera.grupoBotones[15]) {
+            areaTexto.setText("");
+        }
     }
 }
