@@ -98,7 +98,16 @@ public class PanelPrincipal extends JPanel implements ActionListener {
                     resultEntero = dig1 + dig2;
                     fallo = Integer.toString(resultEntero);
                 }
+
+                case "-" -> {
+                    resultEntero = dig1 - dig2;
+                    fallo = Integer.toString(resultEntero);
+                }
+
+                case "*" -> {
+                    resultEntero = dig1 * dig2;
+                    fallo = Integer.toString(resultEntero);
+                }
         }
         return "";
     }
-}
