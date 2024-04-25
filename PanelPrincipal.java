@@ -88,4 +88,17 @@ public class PanelPrincipal extends JPanel implements ActionListener {
             int dig2 = Integer.parseInt(matcher.group(3));
             int resultEntero;
             double resultDouble;
+            String fallo = "";
+            
+            //Hago los operacionesCalculadora dependiendo de que es el simbolo y lo devuelvo como String
+            //para poder usar el .append en el boton =
+            switch (simbolo) {
+
+                case "+" -> {
+                    resultEntero = dig1 + dig2;
+                    fallo = Integer.toString(resultEntero);
+                }
+        }
+        return "";
+    }
 }
