@@ -108,6 +108,19 @@ public class PanelPrincipal extends JPanel implements ActionListener {
                     resultEntero = dig1 * dig2;
                     fallo = Integer.toString(resultEntero);
                 }
+
+                case "/" -> {
+                    if (dig2 == 0) {
+                        fallo = "Math Error";
+                    } else {
+                        //Lo pongo a double por si da decimales
+                        resultDouble = (double) dig1 / dig2; 
+                        fallo = Double.toString(resultDouble);
+                    }
+                }  
+            }
+            return fallo;
         }
         return "";
     }
+}
