@@ -57,8 +57,35 @@ public class PanelPrincipal extends JPanel implements ActionListener {
             //Con append añado al text area no lo resteo 
             areaTexto.append(((JButton) o).getText());  
         }
+
+        // RESTO DEL CÓDIGO DE LA LÓGICA DE LA CALCULADORA
+        
+        //Limpiar
         if (o == botonera.grupoBotones[15]) {
             areaTexto.setText("");
         }
+
+        //Igual
+        if (o == botonera.grupoBotones[14]) {
+            areaTexto.append(operacionesCalculadora());
+        }
     }
+
+    public String operacionesCalculadora() {
+        
+        //Regex de 3 grupos para poder asignarlos a variables
+        String regex = "(\\d+)s*([+*/-])s*(\\d+)";
+
+        Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+        //Coge el string del text area
+        Matcher matcher = pattern.matcher(areaTexto.getText()); 
+        
+        
+        while (matcher.find()) {
+            //Guardo los valores de los grupos a las variable
+            int dig1 = Integer.parseInt(matcher.group(1));
+            String simbolo = matcher.group(2);
+            int dig2 = Integer.parseInt(matcher.group(3));
+            int resultEntero;
+            double resultDouble;
 }
